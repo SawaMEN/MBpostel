@@ -372,6 +372,37 @@ namespace NBpostel
             config.WritePrivateString("settings", "act", Convert.ToString(numericUpDown7.Value));
             //update();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();
+            Form2.opis.lab = "Редактируем вес белья";
+            newForm.Text = "Настройка веса белья";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("ves", "prostin")); ;
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("ves", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("ves", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("ves", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("ves", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("ves", "hal"));
+            Form2.opis.type = "ves";
+
+            newForm.delMethod = update;
+            newForm.Show();
+            //newForm.ShowDialog();           // Вызов формы-диалога
+            //textBox1.Text = LogPar.login + "/" + LogPar.parol; // Результат
+            newForm.delMethod = update;
+        }
     }
 
     public class INIManager
