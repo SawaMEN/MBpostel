@@ -14,6 +14,8 @@ namespace NBpostel
     {
         public string lab; //лейбла
         public int prostin, pododel, navoloch, mpol, bpol, hal;
+        public int c_prostin, c_pododel, c_navoloch, c_mpol, c_bpol, c_hal;
+
         public string type;
     }
 
@@ -80,12 +82,43 @@ namespace NBpostel
         private void button1_Click(object sender, EventArgs e)
         {
             INIManager config = new INIManager(System.IO.Directory.GetCurrentDirectory() + "\\config.ini");
-            config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
-            config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));
-            config.WritePrivateString(opis.type, "pododel", Convert.ToString(numericUpDown3.Value));
-            config.WritePrivateString(opis.type, "mpol", Convert.ToString(numericUpDown4.Value));
-            config.WritePrivateString(opis.type, "bpol", Convert.ToString(numericUpDown5.Value));
-            config.WritePrivateString(opis.type, "hal", Convert.ToString(numericUpDown6.Value));
+
+            if (opis.type == "privoz")
+            {
+                config.WritePrivateString("pratch", "prostin", Convert.ToString(opis.prostin - numericUpDown1.Value));
+                config.WritePrivateString("pratch", "navoloch", Convert.ToString(opis.navoloch - numericUpDown2.Value));
+                config.WritePrivateString("pratch", "pododel", Convert.ToString(opis.pododel - numericUpDown3.Value));
+                config.WritePrivateString("pratch", "mpol", Convert.ToString(opis.mpol - numericUpDown4.Value));
+                config.WritePrivateString("pratch", "bpol", Convert.ToString(opis.bpol - numericUpDown5.Value));
+                config.WritePrivateString("pratch", "hal", Convert.ToString(opis.hal - numericUpDown6.Value));
+            } else {
+                if (opis.type == "uvoz") {
+                    // Уменьшаем грязное
+                    config.WritePrivateString("grazn", "prostin", Convert.ToString(opis.prostin - numericUpDown1.Value));
+                    config.WritePrivateString("grazn", "navoloch", Convert.ToString(opis.navoloch - numericUpDown2.Value));
+                    config.WritePrivateString("grazn", "pododel", Convert.ToString(opis.pododel - numericUpDown3.Value));
+                    config.WritePrivateString("grazn", "mpol", Convert.ToString(opis.mpol - numericUpDown4.Value));
+                    config.WritePrivateString("grazn", "bpol", Convert.ToString(opis.bpol - numericUpDown5.Value));
+                    config.WritePrivateString("grazn", "hal", Convert.ToString(opis.hal - numericUpDown6.Value));
+
+                    //увеличиваем в прачке
+                    config.WritePrivateString("pratch", "prostin", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "prostin")) + numericUpDown1.Value));
+                    config.WritePrivateString("pratch", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "navoloch")) + numericUpDown2.Value));
+                    config.WritePrivateString("pratch", "pododel", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "pododel")) + numericUpDown3.Value));
+                    config.WritePrivateString("pratch", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "mpol")) + numericUpDown4.Value));
+                    config.WritePrivateString("pratch", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "bpol")) + numericUpDown5.Value));
+                    config.WritePrivateString("pratch", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "hal")) + numericUpDown6.Value));
+                } else {
+                    config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
+                    config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));
+                    config.WritePrivateString(opis.type, "pododel", Convert.ToString(numericUpDown3.Value));
+                    config.WritePrivateString(opis.type, "mpol", Convert.ToString(numericUpDown4.Value));
+                    config.WritePrivateString(opis.type, "bpol", Convert.ToString(numericUpDown5.Value));
+                    config.WritePrivateString(opis.type, "hal", Convert.ToString(numericUpDown6.Value));
+                }
+            }
+
+
 
             
 

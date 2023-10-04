@@ -375,7 +375,21 @@ namespace NBpostel
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            Form2 newForm = new Form2();    // создаем объект класса Form2 
+            Form2.opis.lab = "Сколько белья привезли?";
+            newForm.Text = "Привезли бельё";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("pratch", "prostin"));
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("pratch", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("pratch", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("pratch", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("pratch", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("pratch", "hal"));
+            Form2.opis.type = "privoz";
+
+            newForm.delMethod = update;
+            newForm.Show();
+            newForm.delMethod = update;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -401,6 +415,25 @@ namespace NBpostel
             newForm.Show();
             //newForm.ShowDialog();           // Вызов формы-диалога
             //textBox1.Text = LogPar.login + "/" + LogPar.parol; // Результат
+            newForm.delMethod = update;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();    // создаем объект класса Form2 
+            Form2.opis.lab = "Сколько белья увезла прачка?";
+            newForm.Text = "Увезли бельё";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("grazn", "prostin")); ;
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("grazn", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("grazn", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("grazn", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("grazn", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("grazn", "hal"));
+            Form2.opis.type = "uvoz";
+
+            newForm.delMethod = update;
+            newForm.Show();
             newForm.delMethod = update;
         }
     }

@@ -783,7 +783,7 @@ namespace NBpostel
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Location = new System.Drawing.Point(186, 128);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(166, 143);
+            this.groupBox6.Size = new System.Drawing.Size(165, 143);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Настройки";
@@ -845,7 +845,7 @@ namespace NBpostel
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(82, 67);
+            this.button1.Location = new System.Drawing.Point(88, 67);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 31);
             this.button1.TabIndex = 0;
@@ -888,10 +888,11 @@ namespace NBpostel
             // 
             this.button6.Location = new System.Drawing.Point(87, 20);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(72, 32);
+            this.button6.Size = new System.Drawing.Size(72, 31);
             this.button6.TabIndex = 1;
             this.button6.Text = "Увезли";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
