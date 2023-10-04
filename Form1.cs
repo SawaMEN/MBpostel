@@ -436,6 +436,25 @@ namespace NBpostel
             newForm.Show();
             newForm.delMethod = update;
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();    // создаем объект класса Form2 
+            Form2.opis.lab = "Сколько белья убрали в грязное?";
+            newForm.Text = "Убираем бельё в мешок";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("grazn", "prostin"));
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("grazn", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("grazn", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("grazn", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("grazn", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("grazn", "hal"));
+            Form2.opis.type = "snali";
+
+            newForm.delMethod = update;
+            newForm.Show();
+            newForm.delMethod = update;
+        }
     }
 
     public class INIManager

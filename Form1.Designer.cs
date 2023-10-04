@@ -883,6 +883,7 @@ namespace NBpostel
             this.button7.TabIndex = 2;
             this.button7.Text = "Сняли";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
