@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace NBpostel
 {
@@ -454,6 +455,140 @@ namespace NBpostel
             newForm.delMethod = update;
             newForm.Show();
             newForm.delMethod = update;
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            // Создаем приложение Word
+            Word.Application wordApp = new Word.Application();
+
+            // Открываем документ
+            Word.Document doc = wordApp.Documents.Open(dir + "\\act.docx");
+
+            //Сохраняем копию документа
+            doc.SaveAs(dir + "\\acts\\act_"+ Convert.ToString(settings_act) + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".docx");
+
+            // Получаем все закладки в документе
+            Word.Bookmarks bookmarks = doc.Bookmarks;
+
+            // Заполняем данные в закладках
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "num_dogovor")
+                    bookmark.Range.Text = Convert.ToString(settings_act);
+
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "company_act")
+                    bookmark.Range.Text = company_act;
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_navoloch")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "navoloch");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_pododel")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "pododel");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_prostin")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "prostin");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_mpol")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "mpol");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_bpol")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "bpol");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "ves_hal")
+                    bookmark.Range.Text = config.GetPrivateString("ves", "hal");
+
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_navoloch")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "navoloch");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_pododel")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "pododel");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_prostin")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "prostin");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_mpol")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "mpol");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_bpol")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "bpol");
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_hal")
+                    bookmark.Range.Text = config.GetPrivateString("grazn", "hal");
+
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "grazn_vsego")
+                    bookmark.Range.Text = Convert.ToString(grazn_prostin + grazn_navoloch + grazn_pododel + grazn_mpol + grazn_bpol + grazn_hal);
+
+            int sum_navoloch, sum_pododel, sum_prostin, sum_mpol, sum_hal, sum_bpol, sum_vsego;
+
+            sum_navoloch = ves_navoloch * grazn_navoloch;
+            sum_pododel = ves_pododel * grazn_pododel;
+            sum_prostin = ves_prostin * grazn_prostin;
+            sum_mpol = ves_mpol * grazn_mpol;
+            sum_bpol = ves_bpol * grazn_bpol;
+            sum_hal = ves_hal * grazn_hal;
+            sum_vsego = sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal;
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_navoloch")
+                    bookmark.Range.Text = Convert.ToString(sum_navoloch);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_pododel")
+                    bookmark.Range.Text = Convert.ToString(sum_pododel);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_prostin")
+                    bookmark.Range.Text = Convert.ToString(sum_prostin);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_mpol")
+                    bookmark.Range.Text = Convert.ToString(sum_mpol);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_hal")
+                    bookmark.Range.Text = Convert.ToString(sum_hal);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_bpol")
+                    bookmark.Range.Text = Convert.ToString(sum_bpol);
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "sum_vsego")
+                    bookmark.Range.Text = Convert.ToString(sum_vsego);
+
+
+            foreach (Word.Bookmark bookmark in bookmarks)
+                if (bookmark.Name == "date")
+                    bookmark.Range.Text =  DateTime.Now.ToString("dd.MM.yyyy");
+
+
+            //doc.SaveAs("C:\\template2.docx");
+            // Закрываем документ и приложение Word
+            doc.Close();
+            wordApp.Quit();
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer", dir+"\\acts\\");
         }
     }
 

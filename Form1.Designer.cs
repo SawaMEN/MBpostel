@@ -104,10 +104,12 @@ namespace NBpostel
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button4 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -855,6 +857,8 @@ namespace NBpostel
             // 
             // groupBox7
             // 
+            this.groupBox7.Controls.Add(this.button9);
+            this.groupBox7.Controls.Add(this.button4);
             this.groupBox7.Controls.Add(this.button8);
             this.groupBox7.Controls.Add(this.button7);
             this.groupBox7.Controls.Add(this.button6);
@@ -866,9 +870,19 @@ namespace NBpostel
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Действия";
             // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(6, 104);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(99, 33);
+            this.button4.TabIndex = 4;
+            this.button4.Text = "Создать акт";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click_1);
+            // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(87, 65);
+            this.button8.Location = new System.Drawing.Point(87, 59);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(72, 33);
             this.button8.TabIndex = 3;
@@ -877,7 +891,7 @@ namespace NBpostel
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(6, 65);
+            this.button7.Location = new System.Drawing.Point(6, 59);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(75, 33);
             this.button7.TabIndex = 2;
@@ -904,6 +918,16 @@ namespace NBpostel
             this.button5.Text = "Привезли";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(111, 104);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(48, 33);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "acts";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 
@@ -1025,6 +1049,8 @@ namespace NBpostel
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button9;
     }
 }
 
