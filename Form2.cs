@@ -45,6 +45,17 @@ namespace NBpostel
                 numericUpDown6.Value = 0;
             }
             else
+            if (opis.type == "postelili")
+            {
+                
+                numericUpDown1.Value = 30 - opis.prostin;
+                numericUpDown2.Value = 30 - opis.navoloch;
+                numericUpDown3.Value = 30 - opis.pododel;
+                numericUpDown4.Value = 0;
+                numericUpDown5.Value = 0;
+                numericUpDown6.Value = 0;
+            }
+            else
             {
                 numericUpDown1.Value = opis.prostin;
                 numericUpDown2.Value = opis.navoloch;
@@ -138,12 +149,23 @@ namespace NBpostel
                         config.WritePrivateString("koik", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "bpol")) - numericUpDown5.Value));
                         config.WritePrivateString("koik", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "hal")) - numericUpDown6.Value));
                     } else {
-                        config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
-                        config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));
-                        config.WritePrivateString(opis.type, "pododel", Convert.ToString(numericUpDown3.Value));
-                        config.WritePrivateString(opis.type, "mpol", Convert.ToString(numericUpDown4.Value));
-                        config.WritePrivateString(opis.type, "bpol", Convert.ToString(numericUpDown5.Value));
-                        config.WritePrivateString(opis.type, "hal", Convert.ToString(numericUpDown6.Value));
+                        if (opis.type == "postelili") {
+                            //Прибавляем на койки
+                            config.WritePrivateString("koik", "prostin", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "prostin")) + numericUpDown1.Value));
+                            config.WritePrivateString("koik", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "navoloch")) + numericUpDown2.Value));
+                            config.WritePrivateString("koik", "pododel", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "pododel")) + numericUpDown3.Value));
+                            config.WritePrivateString("koik", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "mpol")) + numericUpDown4.Value));
+                            config.WritePrivateString("koik", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "bpol")) + numericUpDown5.Value));
+                            config.WritePrivateString("koik", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "hal")) + numericUpDown6.Value));
+                        } else {
+                            config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
+                            config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));
+                            config.WritePrivateString(opis.type, "pododel", Convert.ToString(numericUpDown3.Value));
+                            config.WritePrivateString(opis.type, "mpol", Convert.ToString(numericUpDown4.Value));
+                            config.WritePrivateString(opis.type, "bpol", Convert.ToString(numericUpDown5.Value));
+                            config.WritePrivateString(opis.type, "hal", Convert.ToString(numericUpDown6.Value));
+                        }
+                        
                     }
 
 

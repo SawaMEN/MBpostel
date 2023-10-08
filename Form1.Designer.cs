@@ -104,12 +104,12 @@ namespace NBpostel
             this.label55 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.button9 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -847,7 +847,7 @@ namespace NBpostel
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 67);
+            this.button1.Location = new System.Drawing.Point(82, 67);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(71, 31);
             this.button1.TabIndex = 0;
@@ -870,6 +870,16 @@ namespace NBpostel
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Действия";
             // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(111, 104);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(48, 33);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "acts";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(6, 104);
@@ -888,6 +898,7 @@ namespace NBpostel
             this.button8.TabIndex = 3;
             this.button8.Text = "Постелили";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button7
             // 
@@ -918,16 +929,6 @@ namespace NBpostel
             this.button5.Text = "Привезли";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(111, 104);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(48, 33);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "acts";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // Form1
             // 

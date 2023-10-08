@@ -148,12 +148,12 @@ namespace NBpostel
             numericUpDown7.Value = settings_act;
 
             //чистых
-            int chist_prostin = (vsego_prostin - grazn_prostin - pratch_prostin);
-            int chist_pododel = (vsego_pododel - grazn_pododel - pratch_pododel);
-            int chist_navoloch = (vsego_navoloch - grazn_navoloch - pratch_navoloch);
-            int chist_mpol = (vsego_mpol - grazn_mpol - pratch_mpol);
-            int chist_bpol = (vsego_bpol - grazn_bpol - pratch_bpol);
-            int chist_hal = (vsego_hal - grazn_hal - pratch_hal);
+            int chist_prostin = (vsego_prostin - grazn_prostin - pratch_prostin - koik_prostin);
+            int chist_pododel = (vsego_pododel - grazn_pododel - pratch_pododel - koik_pododel);
+            int chist_navoloch = (vsego_navoloch - grazn_navoloch - pratch_navoloch - koik_navoloch);
+            int chist_mpol = (vsego_mpol - grazn_mpol - pratch_mpol - koik_mpol);
+            int chist_bpol = (vsego_bpol - grazn_bpol - pratch_bpol - koik_bpol);
+            int chist_hal = (vsego_hal - grazn_hal - pratch_hal - koik_hal);
 
             label36.Text = Convert.ToString(chist_prostin);
             label35.Text = Convert.ToString(chist_navoloch);
@@ -208,63 +208,7 @@ namespace NBpostel
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            //INIManager config = new INIManager(dir + "\\config.ini");
-
-            /*
-            //Всего
-            numericUpDown1.Value = vsego_prostin;
-            numericUpDown2.Value = vsego_navoloch;
-            numericUpDown3.Value = vsego_pododel;
-            numericUpDown4.Value = vsego_mpol;
-            numericUpDown5.Value = vsego_bpol;
-            numericUpDown6.Value = vsego_hal;
-
-            //Грязного
-            label7.Text = Convert.ToString(grazn_prostin);
-            label8.Text = Convert.ToString(grazn_navoloch);
-            label9.Text = Convert.ToString(grazn_pododel);
-            label10.Text = Convert.ToString(grazn_mpol);
-            label11.Text = Convert.ToString(grazn_bpol);
-            label12.Text = Convert.ToString(grazn_hal);
-
-            //В прачке
-            label18.Text = Convert.ToString(pratch_prostin);
-            label17.Text = Convert.ToString(pratch_navoloch);
-            label16.Text = Convert.ToString(pratch_pododel);
-            label15.Text = Convert.ToString(pratch_mpol);
-            label14.Text = Convert.ToString(pratch_bpol);
-            label13.Text = Convert.ToString(pratch_hal);
-
-            //На койках
-            label48.Text = Convert.ToString(koik_prostin);
-            label47.Text = Convert.ToString(koik_navoloch);
-            label46.Text = Convert.ToString(koik_pododel);
-            label45.Text = Convert.ToString(koik_mpol);
-            label44.Text = Convert.ToString(koik_bpol);
-            label43.Text = Convert.ToString(koik_hal);
-
-            //Settings
-            textBox7.Text = company_act;
-            numericUpDown7.Value = settings_act;
-
-            //чистых
-            int chist_prostin = (vsego_prostin - grazn_prostin - pratch_prostin);
-            int chist_pododel = (vsego_pododel - grazn_pododel - pratch_pododel);
-            int chist_navoloch = (vsego_navoloch - grazn_navoloch - pratch_navoloch);
-            int chist_mpol = (vsego_mpol - grazn_mpol - pratch_mpol);
-            int chist_bpol = (vsego_bpol - grazn_bpol - pratch_bpol);
-            int chist_hal = (vsego_hal - grazn_hal - pratch_hal);
-
-            label36.Text = Convert.ToString(chist_prostin);
-            label35.Text = Convert.ToString(chist_navoloch);
-            label34.Text = Convert.ToString(chist_pododel);
-            label33.Text = Convert.ToString(chist_mpol);
-            label32.Text = Convert.ToString(chist_bpol);
-            label31.Text = Convert.ToString(chist_hal);
-
-            */
             update();
-
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -390,7 +334,6 @@ namespace NBpostel
 
             newForm.delMethod = update;
             newForm.Show();
-            newForm.delMethod = update;
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -435,7 +378,6 @@ namespace NBpostel
 
             newForm.delMethod = update;
             newForm.Show();
-            newForm.delMethod = update;
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -454,7 +396,6 @@ namespace NBpostel
 
             newForm.delMethod = update;
             newForm.Show();
-            newForm.delMethod = update;
         }
 
         private void button4_Click_1(object sender, EventArgs e)
@@ -466,7 +407,7 @@ namespace NBpostel
             Word.Document doc = wordApp.Documents.Open(dir + "\\act.docx");
 
             //Сохраняем копию документа
-            doc.SaveAs(dir + "\\acts\\act_"+ Convert.ToString(settings_act) + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".docx");
+            doc.SaveAs(dir + "\\acts\\act_"+ config.GetPrivateString("settings", "act") + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".docx");
 
             // Получаем все закладки в документе
             Word.Bookmarks bookmarks = doc.Bookmarks;
@@ -474,12 +415,12 @@ namespace NBpostel
             // Заполняем данные в закладках
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "num_dogovor")
-                    bookmark.Range.Text = Convert.ToString(settings_act);
+                    bookmark.Range.Text = config.GetPrivateString("settings", "act");
 
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "company_act")
-                    bookmark.Range.Text = company_act;
+                    bookmark.Range.Text = config.GetPrivateString("settings", "company");
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "ves_navoloch")
@@ -533,16 +474,21 @@ namespace NBpostel
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "grazn_vsego")
-                    bookmark.Range.Text = Convert.ToString(grazn_prostin + grazn_navoloch + grazn_pododel + grazn_mpol + grazn_bpol + grazn_hal);
+                    bookmark.Range.Text = Convert.ToString( Int32.Parse(config.GetPrivateString("grazn", "prostin")) +
+                                                            Int32.Parse(config.GetPrivateString("grazn", "pododel")) +
+                                                            Int32.Parse(config.GetPrivateString("grazn", "navoloch")) +
+                                                            Int32.Parse(config.GetPrivateString("grazn", "mpol")) +
+                                                            Int32.Parse(config.GetPrivateString("grazn", "bpol")) +
+                                                            Int32.Parse(config.GetPrivateString("grazn", "hal")));
 
             int sum_navoloch, sum_pododel, sum_prostin, sum_mpol, sum_hal, sum_bpol, sum_vsego;
 
-            sum_navoloch = ves_navoloch * grazn_navoloch;
-            sum_pododel = ves_pododel * grazn_pododel;
-            sum_prostin = ves_prostin * grazn_prostin;
-            sum_mpol = ves_mpol * grazn_mpol;
-            sum_bpol = ves_bpol * grazn_bpol;
-            sum_hal = ves_hal * grazn_hal;
+            sum_navoloch = ves_navoloch * Int32.Parse(config.GetPrivateString("grazn", "navoloch"));
+            sum_pododel = ves_pododel * Int32.Parse(config.GetPrivateString("grazn", "pododel"));
+            sum_prostin = ves_prostin * Int32.Parse(config.GetPrivateString("grazn", "prostin"));
+            sum_mpol = ves_mpol * Int32.Parse(config.GetPrivateString("grazn", "mpol"));
+            sum_bpol = ves_bpol * Int32.Parse(config.GetPrivateString("grazn", "bpol"));
+            sum_hal = ves_hal * Int32.Parse(config.GetPrivateString("grazn", "hal"));
             sum_vsego = sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal;
 
             foreach (Word.Bookmark bookmark in bookmarks)
@@ -584,11 +530,34 @@ namespace NBpostel
             doc.Close();
             wordApp.Quit();
 
+            MessageBox.Show("Акт №" + config.GetPrivateString("settings", "act") + " от " + DateTime.Now.ToString("dd.MM.yyyy") + "\n Успешно создан!");
+
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("explorer", dir+"\\acts\\");
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();    // создаем объект класса Form2 
+            Form2.opis.lab = "Сколько белья постелили на кровать?";
+            newForm.Text = "Кладем на койки";
+
+
+            Form2.opis.prostin = Convert.ToInt32(config.GetPrivateString("koik", "prostin"));
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("koik", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("koik", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("koik", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("koik", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("koik", "hal"));
+
+
+            Form2.opis.type = "postelili";
+
+            newForm.delMethod = update;
+            newForm.Show();
         }
     }
 
