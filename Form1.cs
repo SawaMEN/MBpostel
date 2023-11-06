@@ -11,6 +11,7 @@ using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Word = Microsoft.Office.Interop.Word;
+using AutoUpdaterDotNET;
 
 namespace NBpostel
 {
@@ -209,6 +210,7 @@ namespace NBpostel
         public void Form1_Load(object sender, EventArgs e)
         {
             update();
+            AutoUpdater.Start("https://github.com/SawaMEN/MBpostel/raw/main/update.xml");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
