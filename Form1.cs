@@ -111,15 +111,6 @@ namespace NBpostel
             int settings_act = Int32.Parse(config.GetPrivateString("settings", "act"));
             string company_act = (config.GetPrivateString("settings", "company")).ToString();
 
-
-            //Всего
-            numericUpDown1.Value = vsego_prostin;
-            numericUpDown2.Value = vsego_navoloch;
-            numericUpDown3.Value = vsego_pododel;
-            numericUpDown4.Value = vsego_mpol;
-            numericUpDown5.Value = vsego_bpol;
-            numericUpDown6.Value = vsego_hal;
-
             //Грязного
             label7.Text = Convert.ToString(grazn_prostin);
             label8.Text = Convert.ToString(grazn_navoloch);
@@ -278,47 +269,11 @@ namespace NBpostel
             newForm.ShowDialog();
         }
 
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "prostin", Convert.ToString(numericUpDown1.Value));
-            update();
-        }
-
-        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "navoloch", Convert.ToString(numericUpDown2.Value));
-            update();
-        }
-
-        private void numericUpDown3_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "pododel", Convert.ToString(numericUpDown3.Value));
-            update();
-        }
-
-        private void numericUpDown4_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "mpol", Convert.ToString(numericUpDown4.Value));
-            update();
-        }
-
-        private void numericUpDown5_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "bpol", Convert.ToString(numericUpDown5.Value));
-            update();
-        }
-
-        private void numericUpDown6_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("vsego", "hal", Convert.ToString(numericUpDown6.Value));
-            update();
-        }
-
         private void numericUpDown7_ValueChanged(object sender, EventArgs e)
         {
             config.WritePrivateString("settings", "act", Convert.ToString(numericUpDown7.Value));
             //update();
-        }
+        } 
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -402,6 +357,8 @@ namespace NBpostel
 
         private void button4_Click_1(object sender, EventArgs e)
         {
+            button4.Enabled = false;
+            
             // Создаем приложение Word
             Word.Application wordApp = new Word.Application();
 
@@ -533,7 +490,7 @@ namespace NBpostel
             wordApp.Quit();
 
             MessageBox.Show("Акт №" + config.GetPrivateString("settings", "act") + " от " + DateTime.Now.ToString("dd.MM.yyyy") + "\n Успешно создан!");
-
+            button4.Enabled = true;
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -560,6 +517,24 @@ namespace NBpostel
 
             newForm.delMethod = update;
             newForm.Show();
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();    // создаем объект класса Form2 
+            Form2.opis.lab = "Редактируем колличество белья";
+            newForm.Text = "Сколько всего белья";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("vsego", "prostin"));
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("vsego", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("vsego", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("vsego", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("vsego", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("vsego", "hal"));
+            Form2.opis.type = "vsego";
+
+            newForm.delMethod = update;
+            newForm.ShowDialog();
         }
     }
 

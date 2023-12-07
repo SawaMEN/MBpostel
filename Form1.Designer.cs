@@ -56,19 +56,6 @@ namespace NBpostel
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
@@ -96,6 +83,7 @@ namespace NBpostel
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button13 = new System.Windows.Forms.Button();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -110,20 +98,18 @@ namespace NBpostel
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.groupBox7.SuspendLayout();
+            this.groupBox8.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -388,133 +374,6 @@ namespace NBpostel
             this.label24.Text = "Простыня:";
             this.label24.Click += new System.EventHandler(this.label24_Click);
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.numericUpDown6);
-            this.groupBox3.Controls.Add(this.numericUpDown5);
-            this.groupBox3.Controls.Add(this.numericUpDown4);
-            this.groupBox3.Controls.Add(this.numericUpDown3);
-            this.groupBox3.Controls.Add(this.numericUpDown2);
-            this.groupBox3.Controls.Add(this.numericUpDown1);
-            this.groupBox3.Controls.Add(this.label25);
-            this.groupBox3.Controls.Add(this.label26);
-            this.groupBox3.Controls.Add(this.label27);
-            this.groupBox3.Controls.Add(this.label28);
-            this.groupBox3.Controls.Add(this.label29);
-            this.groupBox3.Controls.Add(this.label30);
-            this.groupBox3.Location = new System.Drawing.Point(12, 128);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(168, 181);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Всего";
-            // 
-            // numericUpDown6
-            // 
-            this.numericUpDown6.Location = new System.Drawing.Point(121, 150);
-            this.numericUpDown6.Name = "numericUpDown6";
-            this.numericUpDown6.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown6.TabIndex = 17;
-            this.numericUpDown6.ValueChanged += new System.EventHandler(this.numericUpDown6_ValueChanged);
-            // 
-            // numericUpDown5
-            // 
-            this.numericUpDown5.Location = new System.Drawing.Point(121, 124);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown5.TabIndex = 16;
-            this.numericUpDown5.ValueChanged += new System.EventHandler(this.numericUpDown5_ValueChanged);
-            // 
-            // numericUpDown4
-            // 
-            this.numericUpDown4.Location = new System.Drawing.Point(121, 98);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown4.TabIndex = 15;
-            this.numericUpDown4.ValueChanged += new System.EventHandler(this.numericUpDown4_ValueChanged);
-            // 
-            // numericUpDown3
-            // 
-            this.numericUpDown3.Location = new System.Drawing.Point(121, 72);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown3.TabIndex = 14;
-            this.numericUpDown3.ValueChanged += new System.EventHandler(this.numericUpDown3_ValueChanged);
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.Location = new System.Drawing.Point(121, 45);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown2.TabIndex = 13;
-            this.numericUpDown2.ValueChanged += new System.EventHandler(this.numericUpDown2_ValueChanged);
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Location = new System.Drawing.Point(121, 20);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(44, 20);
-            this.numericUpDown1.TabIndex = 12;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(80, 152);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(40, 13);
-            this.label25.TabIndex = 11;
-            this.label25.Text = "Халат:";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(8, 126);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(112, 13);
-            this.label26.TabIndex = 10;
-            this.label26.Text = "Полотенце большое:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(20, 100);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(100, 13);
-            this.label27.TabIndex = 9;
-            this.label27.Text = "Полотенце малое:";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(36, 74);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(84, 13);
-            this.label28.TabIndex = 8;
-            this.label28.Text = "Пододеяльник:";
-            this.label28.Click += new System.EventHandler(this.label28_Click);
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(55, 48);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(65, 13);
-            this.label29.TabIndex = 7;
-            this.label29.Text = "Наволочка:";
-            this.label29.Click += new System.EventHandler(this.label29_Click);
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(59, 22);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(61, 13);
-            this.label30.TabIndex = 6;
-            this.label30.Text = "Простыня:";
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label31);
@@ -776,6 +635,7 @@ namespace NBpostel
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button13);
             this.groupBox6.Controls.Add(this.numericUpDown7);
             this.groupBox6.Controls.Add(this.button3);
             this.groupBox6.Controls.Add(this.button2);
@@ -783,20 +643,29 @@ namespace NBpostel
             this.groupBox6.Controls.Add(this.textBox7);
             this.groupBox6.Controls.Add(this.label55);
             this.groupBox6.Controls.Add(this.button1);
-            this.groupBox6.Location = new System.Drawing.Point(186, 128);
+            this.groupBox6.Location = new System.Drawing.Point(12, 128);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(165, 143);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Настройки";
             // 
+            // button13
+            // 
+            this.button13.Location = new System.Drawing.Point(82, 102);
+            this.button13.Name = "button13";
+            this.button13.Size = new System.Drawing.Size(69, 30);
+            this.button13.TabIndex = 9;
+            this.button13.Text = "Всего";
+            this.button13.UseVisualStyleBackColor = true;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
+            // 
             // numericUpDown7
             // 
-            this.numericUpDown7.Location = new System.Drawing.Point(81, 42);
+            this.numericUpDown7.Location = new System.Drawing.Point(81, 43);
             this.numericUpDown7.Name = "numericUpDown7";
-            this.numericUpDown7.Size = new System.Drawing.Size(70, 20);
-            this.numericUpDown7.TabIndex = 8;
-            this.numericUpDown7.ValueChanged += new System.EventHandler(this.numericUpDown7_ValueChanged);
+            this.numericUpDown7.Size = new System.Drawing.Size(71, 20);
+            this.numericUpDown7.TabIndex = 10;
             // 
             // button3
             // 
@@ -863,7 +732,7 @@ namespace NBpostel
             this.groupBox7.Controls.Add(this.button7);
             this.groupBox7.Controls.Add(this.button6);
             this.groupBox7.Controls.Add(this.button5);
-            this.groupBox7.Location = new System.Drawing.Point(358, 128);
+            this.groupBox7.Location = new System.Drawing.Point(184, 128);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(165, 143);
             this.groupBox7.TabIndex = 6;
@@ -876,7 +745,7 @@ namespace NBpostel
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(48, 33);
             this.button9.TabIndex = 5;
-            this.button9.Text = "acts";
+            this.button9.Text = "Акты";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -930,16 +799,55 @@ namespace NBpostel
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.button12);
+            this.groupBox8.Controls.Add(this.button11);
+            this.groupBox8.Controls.Add(this.button10);
+            this.groupBox8.Location = new System.Drawing.Point(358, 128);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(148, 143);
+            this.groupBox8.TabIndex = 7;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Быстрые действия";
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(9, 105);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(128, 31);
+            this.button12.TabIndex = 2;
+            this.button12.Text = "Забрали полотенце";
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(9, 67);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(128, 31);
+            this.button11.TabIndex = 1;
+            this.button11.Text = "Выдали полотенце";
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(9, 21);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(128, 31);
+            this.button10.TabIndex = 0;
+            this.button10.Text = "+1 комплект";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 326);
+            this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -950,14 +858,6 @@ namespace NBpostel
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
@@ -966,6 +866,7 @@ namespace NBpostel
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.groupBox7.ResumeLayout(false);
+            this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -998,13 +899,6 @@ namespace NBpostel
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label32;
@@ -1038,12 +932,6 @@ namespace NBpostel
         private System.Windows.Forms.Label label56;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown6;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.NumericUpDown numericUpDown7;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button button6;
@@ -1052,6 +940,11 @@ namespace NBpostel
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button13;
     }
 }
 
