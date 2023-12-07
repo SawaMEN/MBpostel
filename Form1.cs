@@ -202,6 +202,7 @@ namespace NBpostel
         {
             update();
             AutoUpdater.Start("https://github.com/SawaMEN/MBpostel/raw/main/update.xml");
+            label25.Text = "MBpostel v" + Application.ProductVersion.ToString() + " ©️RGBcorp, 2023";
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -535,6 +536,38 @@ namespace NBpostel
 
             newForm.delMethod = update;
             newForm.ShowDialog();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            config.WritePrivateString("grazn", "prostin", Convert.ToString(Convert.ToInt32(config.GetPrivateString("grazn", "prostin")) + 1));
+            config.WritePrivateString("grazn", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "navoloch")) + 1));
+            config.WritePrivateString("grazn", "pododel", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "pododel")) + 1));
+            update();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            config.WritePrivateString("koik", "mpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "mpol")) + 1));
+            update();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            config.WritePrivateString("grazn", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "mpol")) + 1));
+            config.WritePrivateString("koik", "mpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "mpol")) - 1));
+            update();
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            config.WritePrivateString("koik", "bpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "bpol")) + 1));
+            update();
+        }
+
+        private void label25_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 

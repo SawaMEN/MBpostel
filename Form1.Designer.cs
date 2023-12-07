@@ -99,9 +99,11 @@ namespace NBpostel
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.button14 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.label25 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -801,33 +803,46 @@ namespace NBpostel
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.button14);
             this.groupBox8.Controls.Add(this.button12);
             this.groupBox8.Controls.Add(this.button11);
             this.groupBox8.Controls.Add(this.button10);
             this.groupBox8.Location = new System.Drawing.Point(358, 128);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(148, 143);
+            this.groupBox8.Size = new System.Drawing.Size(148, 186);
             this.groupBox8.TabIndex = 7;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Быстрые действия";
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(9, 132);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(128, 48);
+            this.button14.TabIndex = 3;
+            this.button14.Text = "Выдали большое полотенце";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
+            // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(9, 105);
+            this.button12.Location = new System.Drawing.Point(9, 95);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(128, 31);
             this.button12.TabIndex = 2;
             this.button12.Text = "Забрали полотенце";
             this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(9, 67);
+            this.button11.Location = new System.Drawing.Point(9, 58);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(128, 31);
             this.button11.TabIndex = 1;
             this.button11.Text = "Выдали полотенце";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -837,12 +852,26 @@ namespace NBpostel
             this.button10.TabIndex = 0;
             this.button10.Text = "+1 комплект";
             this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 5.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label25.Location = new System.Drawing.Point(585, 314);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(28, 7);
+            this.label25.TabIndex = 8;
+            this.label25.Text = "version";
+            this.label25.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.label25.Click += new System.EventHandler(this.label25_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 326);
+            this.Controls.Add(this.label25);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
             this.Controls.Add(this.groupBox6);
@@ -868,6 +897,7 @@ namespace NBpostel
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -945,6 +975,8 @@ namespace NBpostel
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Label label25;
     }
 }
 
