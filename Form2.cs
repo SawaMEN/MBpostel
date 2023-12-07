@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -114,6 +115,9 @@ namespace NBpostel
                 config.WritePrivateString("pratch", "mpol", Convert.ToString(opis.mpol - numericUpDown4.Value));
                 config.WritePrivateString("pratch", "bpol", Convert.ToString(opis.bpol - numericUpDown5.Value));
                 config.WritePrivateString("pratch", "hal", Convert.ToString(opis.hal - numericUpDown6.Value));
+
+                using (var writer = new StreamWriter("log.txt", true))
+                    writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Привезли: [" + numericUpDown1.Value+"/"+numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value+"]");
             } else {
                 if (opis.type == "uvoz") {
                     // Уменьшаем грязное
@@ -131,6 +135,9 @@ namespace NBpostel
                     config.WritePrivateString("pratch", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "mpol")) + numericUpDown4.Value));
                     config.WritePrivateString("pratch", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "bpol")) + numericUpDown5.Value));
                     config.WritePrivateString("pratch", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("pratch", "hal")) + numericUpDown6.Value));
+
+                    using (var writer = new StreamWriter("log.txt", true))
+                        writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Увезли: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
                 } else {
                     if (opis.type == "snali") {
                         // Увеличиваем грязное
@@ -148,6 +155,9 @@ namespace NBpostel
                         config.WritePrivateString("koik", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "mpol")) - numericUpDown4.Value));
                         config.WritePrivateString("koik", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "bpol")) - numericUpDown5.Value));
                         config.WritePrivateString("koik", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "hal")) - numericUpDown6.Value));
+
+                        using (var writer = new StreamWriter("log.txt", true))
+                            writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Сняли: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
                     } else {
                         if (opis.type == "postelili") {
                             //Прибавляем на койки
@@ -157,6 +167,9 @@ namespace NBpostel
                             config.WritePrivateString("koik", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "mpol")) + numericUpDown4.Value));
                             config.WritePrivateString("koik", "bpol", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "bpol")) + numericUpDown5.Value));
                             config.WritePrivateString("koik", "hal", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "hal")) + numericUpDown6.Value));
+
+                            using (var writer = new StreamWriter("log.txt", true))
+                                writer.WriteLine(DateTime.Now.ToString("MM//dd//yy") + " Постелили: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
                         } else {
                             config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
                             config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));

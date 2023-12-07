@@ -155,6 +155,19 @@ namespace NBpostel
             label31.Text = Convert.ToString(chist_hal);
 
             //MessageBox.Show("Готово");
+
+            //log
+            listBox1.Items.Clear();
+            string[] LogFile = File.ReadLines(dir + "\\log.txt").Reverse().Take(30).ToArray();
+            for (int i = 0; i < LogFile.Length; i++)
+            {
+                listBox1.Items.Add(LogFile[i]);
+            }
+
+            //var lines = File.ReadAllLines(dir+ "\\log.txt").Reverse();
+            //listBox1.Items.Add(lines);
+            //listBox1.Items.AddRange(File.ReadAllLines(dir + "\\log.txt", Encoding.Default));
+            //listBox1.Items.AddRange(File.ReadAllLines(dir + "\\log.txt", Encoding.Default));
         }
 
         public Form1()
@@ -203,6 +216,10 @@ namespace NBpostel
             update();
             AutoUpdater.Start("https://github.com/SawaMEN/MBpostel/raw/main/update.xml");
             label25.Text = "MBpostel v" + Application.ProductVersion.ToString() + " ©️RGBcorp, 2023";
+
+            /* using (StreamReader r = new StreamReader("users.txt", Encoding.Default))
+                while (!r.EndOfStream)
+                    comboBox1.Items.Add(r.ReadLine()); */
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -543,12 +560,20 @@ namespace NBpostel
             config.WritePrivateString("grazn", "prostin", Convert.ToString(Convert.ToInt32(config.GetPrivateString("grazn", "prostin")) + 1));
             config.WritePrivateString("grazn", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "navoloch")) + 1));
             config.WritePrivateString("grazn", "pododel", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "pododel")) + 1));
+            
+            using (var writer = new StreamWriter("log.txt", true))
+                writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Поменяли 1 комплект");
+
             update();
         }
 
         private void button11_Click(object sender, EventArgs e)
         {
             config.WritePrivateString("koik", "mpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "mpol")) + 1));
+
+            using (var writer = new StreamWriter("log.txt", true))
+                writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Выдали полотенце");
+
             update();
         }
 
@@ -556,18 +581,44 @@ namespace NBpostel
         {
             config.WritePrivateString("grazn", "mpol", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "mpol")) + 1));
             config.WritePrivateString("koik", "mpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "mpol")) - 1));
+
+            using (var writer = new StreamWriter("log.txt", true))
+                writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Забрали полотенце");
+
             update();
         }
 
         private void button14_Click(object sender, EventArgs e)
         {
             config.WritePrivateString("koik", "bpol", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "bpol")) + 1));
+
+            using (var writer = new StreamWriter("log.txt", true))
+                writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Выдали большое полотенце");
+
             update();
         }
 
         private void label25_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void toolStripComboBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process txt = new System.Diagnostics.Process();
+            txt.StartInfo.FileName = "notepad.exe";
+            txt.StartInfo.Arguments = dir+"\\log.txt";
+            txt.Start();
         }
     }
 

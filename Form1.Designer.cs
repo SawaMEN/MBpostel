@@ -104,6 +104,9 @@ namespace NBpostel
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.button15 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -112,6 +115,7 @@ namespace NBpostel
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
             this.groupBox7.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -866,11 +870,43 @@ namespace NBpostel
             this.label25.TextAlign = System.Drawing.ContentAlignment.BottomRight;
             this.label25.Click += new System.EventHandler(this.label25_Click_1);
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Controls.Add(this.button15);
+            this.groupBox3.Location = new System.Drawing.Point(512, 128);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(183, 186);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Логи";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 9;
+            this.listBox1.Location = new System.Drawing.Point(6, 17);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(171, 130);
+            this.listBox1.TabIndex = 1;
+            // 
+            // button15
+            // 
+            this.button15.Location = new System.Drawing.Point(6, 157);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(171, 23);
+            this.button15.TabIndex = 0;
+            this.button15.Text = "Посмотреть лог";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(707, 326);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.groupBox8);
             this.Controls.Add(this.groupBox7);
@@ -896,6 +932,7 @@ namespace NBpostel
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox8.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -977,6 +1014,9 @@ namespace NBpostel
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
 
