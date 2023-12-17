@@ -471,7 +471,7 @@ namespace NBpostel
             sum_mpol = ves_mpol * Int32.Parse(config.GetPrivateString("grazn", "mpol"));
             sum_bpol = ves_bpol * Int32.Parse(config.GetPrivateString("grazn", "bpol"));
             sum_hal = ves_hal * Int32.Parse(config.GetPrivateString("grazn", "hal"));
-            sum_vsego = (sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal)/1000;
+            sum_vsego = sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal;
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "sum_navoloch")
@@ -499,7 +499,7 @@ namespace NBpostel
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "sum_vsego")
-                    bookmark.Range.Text = Convert.ToString(sum_vsego);
+                    bookmark.Range.Text = Convert.ToString(sum_vsego / 1000);
 
 
             foreach (Word.Bookmark bookmark in bookmarks)
