@@ -217,7 +217,7 @@ namespace NBpostel
         public void Form1_Load(object sender, EventArgs e)
         {
             update();
-            AutoUpdater.Start("https://github.com/SawaMEN/MBpostel/raw/main/update.xml");
+            AutoUpdater.Start("https://github.com/SawaMEN/MBpostel_updater/raw/main/update.xml");
             label25.Text = "MBpostel v" + Application.ProductVersion.ToString() + " ©️RGBcorp, 2023";
 
             /* using (StreamReader r = new StreamReader("users.txt", Encoding.Default))
