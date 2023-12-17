@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using AutoUpdaterDotNET;
+using System;
+using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-
-using System.IO;
-using System.Reflection;
-using System.Runtime.InteropServices;
 using Word = Microsoft.Office.Interop.Word;
-using AutoUpdaterDotNET;
 
 namespace NBpostel
 {
@@ -20,7 +14,7 @@ namespace NBpostel
         static string dir = System.IO.Directory.GetCurrentDirectory();
         static INIManager config = new INIManager(dir + "\\config.ini");
 
-        
+
         //Всего
         int vsego_prostin = Convert.ToInt32(config.GetPrivateString("vsego", "prostin"));
         int vsego_pododel = Convert.ToInt32(config.GetPrivateString("vsego", "pododel"));
@@ -98,7 +92,7 @@ namespace NBpostel
             int koik_mpol = Int32.Parse(config.GetPrivateString("koik", "mpol"));
             int koik_bpol = Int32.Parse(config.GetPrivateString("koik", "bpol"));
             int koik_hal = Int32.Parse(config.GetPrivateString("koik", "hal"));
-            
+
             //На койках
             int brak_prostin = Convert.ToInt32(config.GetPrivateString("brak", "prostin"));
             int brak_pododel = Int32.Parse(config.GetPrivateString("brak", "pododel"));
@@ -317,7 +311,7 @@ namespace NBpostel
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -380,7 +374,7 @@ namespace NBpostel
         private void button4_Click_1(object sender, EventArgs e)
         {
             button4.Enabled = false;
-            
+
             // Создаем приложение Word
             Word.Application wordApp = new Word.Application();
 
@@ -388,7 +382,7 @@ namespace NBpostel
             Word.Document doc = wordApp.Documents.Open(dir + "\\act.docx");
 
             //Сохраняем копию документа
-            doc.SaveAs(dir + "\\acts\\act_"+ config.GetPrivateString("settings", "act") + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".docx");
+            doc.SaveAs(dir + "\\acts\\act_" + config.GetPrivateString("settings", "act") + "_" + DateTime.Now.ToString("dd-MM-yyyy") + ".docx");
 
             // Получаем все закладки в документе
             Word.Bookmarks bookmarks = doc.Bookmarks;
@@ -455,7 +449,7 @@ namespace NBpostel
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "grazn_vsego")
-                    bookmark.Range.Text = Convert.ToString( Int32.Parse(config.GetPrivateString("grazn", "prostin")) +
+                    bookmark.Range.Text = Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "prostin")) +
                                                             Int32.Parse(config.GetPrivateString("grazn", "pododel")) +
                                                             Int32.Parse(config.GetPrivateString("grazn", "navoloch")) +
                                                             Int32.Parse(config.GetPrivateString("grazn", "mpol")) +
@@ -504,7 +498,7 @@ namespace NBpostel
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "date")
-                    bookmark.Range.Text =  DateTime.Now.ToString("dd.MM.yyyy");
+                    bookmark.Range.Text = DateTime.Now.ToString("dd.MM.yyyy");
 
 
             //doc.SaveAs("C:\\template2.docx");
@@ -518,7 +512,7 @@ namespace NBpostel
 
         private void button9_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start("explorer", dir+"\\acts\\");
+            System.Diagnostics.Process.Start("explorer", dir + "\\acts\\");
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -565,7 +559,7 @@ namespace NBpostel
             config.WritePrivateString("grazn", "prostin", Convert.ToString(Convert.ToInt32(config.GetPrivateString("grazn", "prostin")) + 1));
             config.WritePrivateString("grazn", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "navoloch")) + 1));
             config.WritePrivateString("grazn", "pododel", Convert.ToString(Int32.Parse(config.GetPrivateString("grazn", "pododel")) + 1));
-            
+
             using (var writer = new StreamWriter("log.txt", true))
                 writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Поменяли 1 комплект");
 
@@ -622,7 +616,7 @@ namespace NBpostel
         {
             System.Diagnostics.Process txt = new System.Diagnostics.Process();
             txt.StartInfo.FileName = "notepad.exe";
-            txt.StartInfo.Arguments = dir+"\\log.txt";
+            txt.StartInfo.Arguments = dir + "\\log.txt";
             txt.Start();
         }
 

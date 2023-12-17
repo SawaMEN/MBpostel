@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace NBpostel
@@ -35,7 +29,7 @@ namespace NBpostel
         private void Form2_Load(object sender, EventArgs e)
         {
             label1.Text = opis.lab;
-            
+
             if (opis.type == "snali")
             {
                 numericUpDown1.Value = 0;
@@ -48,7 +42,7 @@ namespace NBpostel
             else
             if (opis.type == "postelili")
             {
-                
+
                 numericUpDown1.Value = 30 - opis.prostin;
                 numericUpDown2.Value = 30 - opis.navoloch;
                 numericUpDown3.Value = 30 - opis.pododel;
@@ -65,7 +59,7 @@ namespace NBpostel
                 numericUpDown5.Value = opis.bpol;
                 numericUpDown6.Value = opis.hal;
             }
-            
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -117,9 +111,12 @@ namespace NBpostel
                 config.WritePrivateString("pratch", "hal", Convert.ToString(opis.hal - numericUpDown6.Value));
 
                 using (var writer = new StreamWriter("log.txt", true))
-                    writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Привезли: [" + numericUpDown1.Value+"/"+numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value+"]");
-            } else {
-                if (opis.type == "uvoz") {
+                    writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Привезли: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
+            }
+            else
+            {
+                if (opis.type == "uvoz")
+                {
                     // Уменьшаем грязное
                     config.WritePrivateString("grazn", "prostin", Convert.ToString(opis.prostin - numericUpDown1.Value));
                     config.WritePrivateString("grazn", "navoloch", Convert.ToString(opis.navoloch - numericUpDown2.Value));
@@ -138,8 +135,11 @@ namespace NBpostel
 
                     using (var writer = new StreamWriter("log.txt", true))
                         writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Увезли: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
-                } else {
-                    if (opis.type == "snali") {
+                }
+                else
+                {
+                    if (opis.type == "snali")
+                    {
                         // Увеличиваем грязное
                         config.WritePrivateString("grazn", "prostin", Convert.ToString(opis.prostin + numericUpDown1.Value));
                         config.WritePrivateString("grazn", "navoloch", Convert.ToString(opis.navoloch + numericUpDown2.Value));
@@ -158,8 +158,11 @@ namespace NBpostel
 
                         using (var writer = new StreamWriter("log.txt", true))
                             writer.WriteLine(DateTime.Now.ToString("dd//MM//yy") + " Сняли: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
-                    } else {
-                        if (opis.type == "postelili") {
+                    }
+                    else
+                    {
+                        if (opis.type == "postelili")
+                        {
                             //Прибавляем на койки
                             config.WritePrivateString("koik", "prostin", Convert.ToString(Convert.ToInt32(config.GetPrivateString("koik", "prostin")) + numericUpDown1.Value));
                             config.WritePrivateString("koik", "navoloch", Convert.ToString(Int32.Parse(config.GetPrivateString("koik", "navoloch")) + numericUpDown2.Value));
@@ -170,7 +173,9 @@ namespace NBpostel
 
                             using (var writer = new StreamWriter("log.txt", true))
                                 writer.WriteLine(DateTime.Now.ToString("MM//dd//yy") + " Постелили: [" + numericUpDown1.Value + "/" + numericUpDown2.Value + "/" + numericUpDown3.Value + "/" + numericUpDown4.Value + "/" + numericUpDown5.Value + "/" + numericUpDown6.Value + "]");
-                        } else {
+                        }
+                        else
+                        {
                             config.WritePrivateString(opis.type, "prostin", Convert.ToString(numericUpDown1.Value));
                             config.WritePrivateString(opis.type, "navoloch", Convert.ToString(numericUpDown2.Value));
                             config.WritePrivateString(opis.type, "pododel", Convert.ToString(numericUpDown3.Value));
@@ -178,17 +183,17 @@ namespace NBpostel
                             config.WritePrivateString(opis.type, "bpol", Convert.ToString(numericUpDown5.Value));
                             config.WritePrivateString(opis.type, "hal", Convert.ToString(numericUpDown6.Value));
                         }
-                        
+
                     }
 
 
-                    
+
                 }
             }
 
 
 
-            
+
 
             //Form2.close();
             //Form1.ActiveForm.Invalidate(); 
