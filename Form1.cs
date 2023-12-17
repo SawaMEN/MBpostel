@@ -98,6 +98,15 @@ namespace NBpostel
             int koik_mpol = Int32.Parse(config.GetPrivateString("koik", "mpol"));
             int koik_bpol = Int32.Parse(config.GetPrivateString("koik", "bpol"));
             int koik_hal = Int32.Parse(config.GetPrivateString("koik", "hal"));
+            
+            //На койках
+            int brak_prostin = Convert.ToInt32(config.GetPrivateString("brak", "prostin"));
+            int brak_pododel = Int32.Parse(config.GetPrivateString("brak", "pododel"));
+            int brak_navoloch = Int32.Parse(config.GetPrivateString("brak", "navoloch"));
+            int brak_mpol = Int32.Parse(config.GetPrivateString("brak", "mpol"));
+            int brak_bpol = Int32.Parse(config.GetPrivateString("brak", "bpol"));
+            int brak_hal = Int32.Parse(config.GetPrivateString("brak", "hal"));
+
 
             //Вес
             int ves_prostin = Int32.Parse(config.GetPrivateString("ves", "prostin"));
@@ -140,12 +149,12 @@ namespace NBpostel
             numericUpDown7.Value = settings_act;
 
             //чистых
-            int chist_prostin = (vsego_prostin - grazn_prostin - pratch_prostin - koik_prostin);
-            int chist_pododel = (vsego_pododel - grazn_pododel - pratch_pododel - koik_pododel);
-            int chist_navoloch = (vsego_navoloch - grazn_navoloch - pratch_navoloch - koik_navoloch);
-            int chist_mpol = (vsego_mpol - grazn_mpol - pratch_mpol - koik_mpol);
-            int chist_bpol = (vsego_bpol - grazn_bpol - pratch_bpol - koik_bpol);
-            int chist_hal = (vsego_hal - grazn_hal - pratch_hal - koik_hal);
+            int chist_prostin = (vsego_prostin - grazn_prostin - pratch_prostin - koik_prostin - brak_prostin);
+            int chist_pododel = (vsego_pododel - grazn_pododel - pratch_pododel - koik_pododel - brak_pododel);
+            int chist_navoloch = (vsego_navoloch - grazn_navoloch - pratch_navoloch - koik_navoloch - brak_navoloch);
+            int chist_mpol = (vsego_mpol - grazn_mpol - pratch_mpol - koik_mpol - brak_mpol);
+            int chist_bpol = (vsego_bpol - grazn_bpol - pratch_bpol - koik_bpol - brak_bpol);
+            int chist_hal = (vsego_hal - grazn_hal - pratch_hal - koik_hal - brak_hal);
 
             label36.Text = Convert.ToString(chist_prostin);
             label35.Text = Convert.ToString(chist_navoloch);
@@ -619,6 +628,25 @@ namespace NBpostel
             txt.StartInfo.FileName = "notepad.exe";
             txt.StartInfo.Arguments = dir+"\\log.txt";
             txt.Start();
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Form2 newForm = new Form2();
+            Form2.opis.lab = "Редактируем колличество бракованного белья";
+            newForm.Text = "Брак белья";
+
+            Form2.opis.prostin = Int32.Parse(config.GetPrivateString("brak", "prostin")); ;
+            Form2.opis.pododel = Int32.Parse(config.GetPrivateString("brak", "pododel"));
+            Form2.opis.navoloch = Int32.Parse(config.GetPrivateString("brak", "navoloch"));
+            Form2.opis.mpol = Int32.Parse(config.GetPrivateString("brak", "mpol"));
+            Form2.opis.bpol = Int32.Parse(config.GetPrivateString("brak", "bpol"));
+            Form2.opis.hal = Int32.Parse(config.GetPrivateString("brak", "hal"));
+            Form2.opis.type = "brak";
+
+            newForm.delMethod = update;
+            newForm.Show();
+            newForm.delMethod = update;
         }
     }
 

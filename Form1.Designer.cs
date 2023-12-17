@@ -107,6 +107,7 @@ namespace NBpostel
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button15 = new System.Windows.Forms.Button();
+            this.button16 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -641,6 +642,7 @@ namespace NBpostel
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.button16);
             this.groupBox6.Controls.Add(this.button13);
             this.groupBox6.Controls.Add(this.numericUpDown7);
             this.groupBox6.Controls.Add(this.button3);
@@ -651,7 +653,7 @@ namespace NBpostel
             this.groupBox6.Controls.Add(this.button1);
             this.groupBox6.Location = new System.Drawing.Point(12, 128);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(165, 143);
+            this.groupBox6.Size = new System.Drawing.Size(165, 180);
             this.groupBox6.TabIndex = 5;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Настройки";
@@ -901,6 +903,16 @@ namespace NBpostel
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(6, 138);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(70, 30);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "Брак";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1017,6 +1029,7 @@ namespace NBpostel
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button button16;
     }
 }
 
