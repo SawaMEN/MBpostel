@@ -1,4 +1,4 @@
-# MyBee Postel Programms
+# MayBe Postel Programms
 
 Программа для учета постельного белья в гостиничном деле.
 
@@ -21,6 +21,6 @@
 
 ## Скриншот
 
-![MBpostel]([https://i.imgur.com/8vGvhMe.jpeg](https://github.com/SawaMEN/MBpostel_updater/blob/main/image.png)https://github.com/SawaMEN/MBpostel_updater/blob/main/image.png)
+![MBpostel](https://github.com/SawaMEN/MBpostel_updater/blob/main/image.png)
 
 Copyright (C) 2023 RGBcorp.
