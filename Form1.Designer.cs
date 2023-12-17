@@ -83,6 +83,7 @@ namespace NBpostel
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.button16 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
             this.button3 = new System.Windows.Forms.Button();
@@ -107,7 +108,6 @@ namespace NBpostel
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button15 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -658,6 +658,16 @@ namespace NBpostel
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Настройки";
             // 
+            // button16
+            // 
+            this.button16.Location = new System.Drawing.Point(6, 138);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(70, 30);
+            this.button16.TabIndex = 11;
+            this.button16.Text = "Брак";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
+            // 
             // button13
             // 
             this.button13.Location = new System.Drawing.Point(82, 102);
@@ -674,6 +684,7 @@ namespace NBpostel
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(71, 20);
             this.numericUpDown7.TabIndex = 10;
+            this.numericUpDown7.ValueChanged += new System.EventHandler(this.numericUpDown7_ValueChanged_1);
             // 
             // button3
             // 
@@ -902,16 +913,6 @@ namespace NBpostel
             this.button15.Text = "Посмотреть лог";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(6, 138);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(70, 30);
-            this.button16.TabIndex = 11;
-            this.button16.Text = "Брак";
-            this.button16.UseVisualStyleBackColor = true;
-            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // Form1
             // 

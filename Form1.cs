@@ -296,11 +296,6 @@ namespace NBpostel
             newForm.ShowDialog();
         }
 
-        private void numericUpDown7_ValueChanged(object sender, EventArgs e)
-        {
-            config.WritePrivateString("settings", "act", Convert.ToString(numericUpDown7.Value));
-            //update();
-        } 
 
         private void button5_Click(object sender, EventArgs e)
         {
@@ -467,7 +462,8 @@ namespace NBpostel
                                                             Int32.Parse(config.GetPrivateString("grazn", "bpol")) +
                                                             Int32.Parse(config.GetPrivateString("grazn", "hal")));
 
-            int sum_navoloch, sum_pododel, sum_prostin, sum_mpol, sum_hal, sum_bpol, sum_vsego;
+            int sum_navoloch, sum_pododel, sum_prostin, sum_mpol, sum_hal, sum_bpol;
+            float sum_vsego;
 
             sum_navoloch = ves_navoloch * Int32.Parse(config.GetPrivateString("grazn", "navoloch"));
             sum_pododel = ves_pododel * Int32.Parse(config.GetPrivateString("grazn", "pododel"));
@@ -475,7 +471,7 @@ namespace NBpostel
             sum_mpol = ves_mpol * Int32.Parse(config.GetPrivateString("grazn", "mpol"));
             sum_bpol = ves_bpol * Int32.Parse(config.GetPrivateString("grazn", "bpol"));
             sum_hal = ves_hal * Int32.Parse(config.GetPrivateString("grazn", "hal"));
-            sum_vsego = sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal;
+            sum_vsego = (sum_navoloch + sum_pododel + sum_prostin + sum_mpol + sum_bpol + sum_hal)/1000;
 
             foreach (Word.Bookmark bookmark in bookmarks)
                 if (bookmark.Name == "sum_navoloch")
@@ -647,6 +643,12 @@ namespace NBpostel
             newForm.delMethod = update;
             newForm.Show();
             newForm.delMethod = update;
+        }
+
+        private void numericUpDown7_ValueChanged_1(object sender, EventArgs e)
+        {
+            config.WritePrivateString("settings", "act", Convert.ToString(numericUpDown7.Value));
+            //update();
         }
     }
 
