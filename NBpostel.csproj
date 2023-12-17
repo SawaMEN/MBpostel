@@ -66,9 +66,6 @@
     <Reference Include="AutoUpdater.NET, Version=1.8.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>packages\Autoupdater.NET.Official.1.8.4\lib\net45\AutoUpdater.NET.dll</HintPath>
     </Reference>
-    <Reference Include="EasyDox, Version=2.0.39.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\EasyDox.2.0.39\lib\EasyDox.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Office.Interop.Word, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Office.Interop.Word.15.0.4797.1004\lib\net20\Microsoft.Office.Interop.Word.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -81,9 +78,6 @@
     </Reference>
     <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.2210.55, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Web.WebView2.1.0.2210.55\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Morpher.API, Version=1.0.10.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>packages\Morpher.API.1.0.10\lib\net40\Morpher.API.dll</HintPath>
     </Reference>
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
