@@ -19,6 +19,8 @@
 | Интуитивно              | Интерфейс разработан специально, что бы в нем мог разобраться каждый       |
 | Для себя                | Программа разрабатывалась для упрощения работы самого автора               |
 
+## [Загрузить](https://github.com/SawaMEN/MBpostel/releases)
+
 ## Скриншот
 
 ![MBpostel](https://github.com/SawaMEN/MBpostel_updater/blob/main/image.png)
